@@ -1,5 +1,6 @@
 package com.sha.springbootgatewaymicroservice.Security;
 
+import com.sha.springbootgatewaymicroservice.Security.jwt.JwtAuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -53,6 +54,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public JwtAuthorizationFilter jwtAuthorizationFilter(){
+        return new JwtAuthorizationFilter();
     }
 
     @Bean
