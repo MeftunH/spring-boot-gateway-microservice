@@ -20,7 +20,7 @@ public class UserService implements IUserService {
 
     @Override
     public User saveUser(User user) {
-        passwordEncoder.encode(user.getPassword());
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setCreatedAt(LocalDate.now());
         return userRepository.save(user);
     }
