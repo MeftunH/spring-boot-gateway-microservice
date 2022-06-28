@@ -43,8 +43,16 @@ public class RetrofitConfiguration {
 
     @Bean
     public IProductServiceRequest productServiceRequest(Retrofit.Builder builder,
-                                                        @Value("${product.service.url}")String baseUrl
-                                                        ) {
+                                                        @Value("${product.service.url}") String baseUrl)
+    {
         return builder.baseUrl(baseUrl).build().create(IProductServiceRequest.class);
+    }
+
+    @Bean
+    public ITransactionServiceRequest transactionServiceRequest(Retrofit.Builder builder,
+                                                        @Value("${transaction.service.url}") String baseUrl)
+
+    {
+        return builder.baseUrl(baseUrl).build().create(ITransactionServiceRequest.class);
     }
 }
