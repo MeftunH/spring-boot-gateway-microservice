@@ -1,0 +1,8 @@
+{
+  "name": "sha-gateway-microservice",
+  "buildpacks": [
+    {
+      "url": "heroku/maven"
+    }
+  ]
+}
